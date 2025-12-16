@@ -7,12 +7,14 @@ requires-python = ">=3.12"
 dependencies = []
 
 [dependency-groups]
-dev = [
-    "commitizen==4.10",
-    "pre-commit>=4.5.1",
-    "ruff>=0.14.9",
-    "ty>=0.0.2",
-]
+dev = ["commitizen==4.10", "pre-commit>=4.5.1", "ruff>=0.14.9", "ty>=0.0.2"]
 
 [tool.uv.sources]
 my_commitizen = { workspace = true }
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver"
+version_provider = "uv"
+update_changelog_on_bump = true
